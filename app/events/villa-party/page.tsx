@@ -10,7 +10,7 @@ export const metadata = {
 }
 
 const details = [
-  { icon: '📅', label: 'Date', value: 'Friday, 16 May 2026' },
+  { icon: '📅', label: 'Date', value: 'Saturday, 16 May 2026' },
   { icon: '📍', label: 'Location', value: 'A private villa, Lonavala, Maharashtra' },
   { icon: '🎭', label: 'Theme', value: 'Exclusive Gathering · International Crowd' },
   { icon: '🔒', label: 'Access', value: 'By Personal Invite Only' },
@@ -26,19 +26,24 @@ export default function VillaPartyPage() {
       <main className="flex-1 pt-16">
         {/* Hero banner */}
         <div className="relative bg-pop-black overflow-hidden">
-          {/* Halftone */}
+          {/* Full-bleed image via background */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: 'url(/villa-party.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          />
+
+          {/* Dark + halftone overlay so text stays readable */}
+          <div className="absolute inset-0 bg-black/65" />
           <div
             className="absolute inset-0 opacity-20"
             style={{
               backgroundImage: 'radial-gradient(circle, #FAFF00 1px, transparent 1px)',
               backgroundSize: '18px 18px',
             }}
-          />
-
-          {/* Diagonal accent */}
-          <div
-            className="absolute top-0 right-0 w-1/2 h-full bg-primary opacity-10"
-            style={{ clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 0% 100%)' }}
           />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-10 py-20 md:py-28">
